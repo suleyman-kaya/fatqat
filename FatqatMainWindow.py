@@ -6,7 +6,7 @@
 #
 # WARNING! All changes made in this file will be lost!
 
-import dronekit
+import dronekit, socket
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
@@ -82,9 +82,27 @@ class Ui_FatqatMainWindow(object):
         # bu fonksiyon dronekit kullanarak ConnectionString_Textbox.text()'teki text verisiyle ve wait_ready=True parametresiyle drone'a bağlanacak.
         cs = self.ConnectionString_Textbox.text()
         global vehicle
-        vehicle = dronekit.connect(cs, wait_ready=True)
-        self.dkGetVehicleState()
-        
+        try:
+            global connectionStatus
+            vehicle = dronekit.connect(cs, wait_ready=True)
+            self.dkGetVehicleState()
+            connectionStatus = "Connected."
+            self.ConnectionStatusLabel.setText("Connected.")
+        except socket.error:
+            connectionStatus = "No server exist!"
+            self.ConnectionStatusLabel.setText(connectionStatus)
+            print(connectionStatus)
+        except OSError as e:
+            connectionStatus = "No serial exist!"
+            self.ConnectionStatusLabel.setText(connectionStatus)
+        except dronekit.APIException:
+            connectionStatus = "Timeout!"
+            self.ConnectionStatusLabel.setText(connectionStatus)
+        except:
+            connectionStatus = "Some other error!"
+            self.ConnectionStatusLabel.setText(connectionStatus)
+
+         
     def dkGetVehicleState(self):
         # bu fonksiyon dronekit kullanarak aracın durum bilgisini vehicleStateText (string) isimli bir değişkene kaydedecek ve bu değişkeni VehicleStateTextbox'a bastıracak.
         a= "Autopilot Firmware version: %s" % vehicle.version
