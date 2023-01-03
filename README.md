@@ -8,7 +8,7 @@ i consider three diffrent concepts: core+equipments, modular concept, script-bas
 1. complete core pieces of the software [⏳]:
 - connecting to a vehicle (✅)
 - vehicle state and settings (✅) 
-- taking off (⏳)
+- taking off (✅)
 - guiding and controlling copter (✨)
 - missions (✨)
 
