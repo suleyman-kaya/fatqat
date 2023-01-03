@@ -148,6 +148,16 @@
      <string>Take-off!</string>
     </property>
    </widget>
+   <widget class="QPlainTextEdit" name="ArmAndTakeoffLogsTextbox">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>360</y>
+      <width>261</width>
+      <height>111</height>
+     </rect>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

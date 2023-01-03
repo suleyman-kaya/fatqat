@@ -6,9 +6,9 @@
 #
 # WARNING! All changes made in this file will be lost!
 
-import dronekit, socket
-
+import socket, time
 from PyQt5 import QtCore, QtGui, QtWidgets
+from dronekit import *
 
 
 class Ui_FatqatMainWindow(object):
@@ -54,6 +54,10 @@ class Ui_FatqatMainWindow(object):
         self.TakeOffButton = QtWidgets.QPushButton(self.centralwidget)
         self.TakeOffButton.setGeometry(QtCore.QRect(200, 330, 71, 25))
         self.TakeOffButton.setObjectName("TakeOffButton")
+        self.ArmAndTakeoffLogsTextbox = QtWidgets.QPlainTextEdit(self.centralwidget)
+        self.ArmAndTakeoffLogsTextbox.setGeometry(QtCore.QRect(10, 360, 261, 111))
+        self.ArmAndTakeoffLogsTextbox.setObjectName("ArmAndTakeoffLogsTextbox")
+        FatqatMainWindow.setCentralWidget(self.centralwidget)
         FatqatMainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(FatqatMainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 718, 22))
@@ -67,6 +71,7 @@ class Ui_FatqatMainWindow(object):
         QtCore.QMetaObject.connectSlotsByName(FatqatMainWindow)
 
         self.Btn_Connect.clicked.connect(self.dkConect)
+        self.TakeOffButton.clicked.connect(self.dkTakeOff)
 
     def retranslateUi(self, FatqatMainWindow):
         _translate = QtCore.QCoreApplication.translate
@@ -84,7 +89,7 @@ class Ui_FatqatMainWindow(object):
         global vehicle
         try:
             global connectionStatus
-            vehicle = dronekit.connect(cs, wait_ready=True)
+            vehicle = connect(cs, wait_ready=True)
             self.dkGetVehicleState()
             connectionStatus = "Connected."
             self.ConnectionStatusLabel.setText("Connected.")
@@ -95,7 +100,7 @@ class Ui_FatqatMainWindow(object):
         except OSError as e:
             connectionStatus = "No serial exist!"
             self.ConnectionStatusLabel.setText(connectionStatus)
-        except dronekit.APIException:
+        except APIException:
             connectionStatus = "Timeout!"
             self.ConnectionStatusLabel.setText(connectionStatus)
         except:
@@ -134,11 +139,48 @@ class Ui_FatqatMainWindow(object):
         self.VehicleStateTextbox.setPlainText(vehicleState)
 
         print(vehicleState)
+
+    def arm_and_takeoff(self, aTargetAltitude):
+        """
+        Arms vehicle and fly to aTargetAltitude.
+        """
+
+        print("Basic pre-arm checks")
+        # Don't try to arm until autopilot is ready
+        while not vehicle.is_armable:
+            print(" Waiting for vehicle to initialise...")
+            time.sleep(1)
+
+        print("Arming motors")
+        # Copter should arm in GUIDED mode
+        vehicle.mode = VehicleMode("GUIDED")
+        vehicle.armed = True
+        while not vehicle.mode.name=='GUIDED' and not vehicle.armed:
+            vehicle.mode = "GUIDED"
+            time.sleep(1)
+
+        # Confirm vehicle armed before attempting to take off
+        while not vehicle.armed:
+            print(" Waiting for arming...")
+            time.sleep(1)
+
+        print("Taking off!")
+        vehicle.simple_takeoff(aTargetAltitude) # Take off to target altitude
+
+        # Wait until the vehicle reaches a safe height before processing the goto (otherwise the command
+        #  after Vehicle.simple_takeoff will execute immediately).
+        while True:
+            print(" Altitude: ", vehicle.location.global_relative_frame.alt)
+            #Break and return from function just below target altitude.
+            if vehicle.location.global_relative_frame.alt>=aTargetAltitude*0.95:
+                print("Reached target altitude")
+                break
+            time.sleep(1)
     
     def dkTakeOff(self):
-        # bu fonksiyon Altitude_Textbox.text()'ten aldığı altitude bilgisini dronekitteki takeoff fonksiyonuna parametre olarak göndererek araca takeoff komudu gönderecek. 
-        a=1
-
+        self.dkGetVehicleState()
+        self.arm_and_takeoff(int(self.Altitude_Textbox.text()))
+        self.dkGetVehicleState()
 
 if __name__ == "__main__":
     import sys
