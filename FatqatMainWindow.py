@@ -9,6 +9,8 @@
 import socket, time
 from PyQt5 import QtCore, QtGui, QtWidgets
 from dronekit import *
+from PyQt5.QtCore import QObject, QThread, pyqtSignal
+
 
 
 class Ui_FatqatMainWindow(object):
@@ -178,9 +180,7 @@ class Ui_FatqatMainWindow(object):
             time.sleep(1)
     
     def dkTakeOff(self):
-        self.dkGetVehicleState()
         self.arm_and_takeoff(int(self.Altitude_Textbox.text()))
-        self.dkGetVehicleState()
 
 if __name__ == "__main__":
     import sys
