@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>718</width>
-    <height>524</height>
+    <width>561</width>
+    <height>560</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -43,7 +43,7 @@
       <x>10</x>
       <y>90</y>
       <width>261</width>
-      <height>381</height>
+      <height>411</height>
      </rect>
     </property>
    </widget>
@@ -153,9 +153,12 @@
      <rect>
       <x>290</x>
       <y>90</y>
-      <width>121</width>
+      <width>101</width>
       <height>25</height>
      </rect>
+    </property>
+    <property name="text">
+     <string>Latitude</string>
     </property>
    </widget>
    <widget class="QPushButton" name="GotoThisLocationButton">
@@ -174,11 +177,14 @@
    <widget class="QLineEdit" name="LocationTextbox2">
     <property name="geometry">
      <rect>
-      <x>430</x>
+      <x>400</x>
       <y>90</y>
-      <width>121</width>
+      <width>101</width>
       <height>25</height>
      </rect>
+    </property>
+    <property name="text">
+     <string>Longtitude</string>
     </property>
    </widget>
    <widget class="Line" name="line_4">
@@ -200,7 +206,7 @@
       <x>263</x>
       <y>10</y>
       <width>31</width>
-      <height>461</height>
+      <height>491</height>
      </rect>
     </property>
     <property name="orientation">
@@ -465,9 +471,9 @@
    <widget class="QPushButton" name="SetVehicleModeLandButton">
     <property name="geometry">
      <rect>
-      <x>290</x>
+      <x>430</x>
       <y>400</y>
-      <width>261</width>
+      <width>121</width>
       <height>25</height>
      </rect>
     </property>
@@ -492,7 +498,7 @@
     <property name="geometry">
      <rect>
       <x>290</x>
-      <y>450</y>
+      <y>480</y>
       <width>261</width>
       <height>25</height>
      </rect>
@@ -501,13 +507,62 @@
      <string>Control Vehicle With Arrow Keys</string>
     </property>
    </widget>
+   <widget class="QLineEdit" name="AltTextbox">
+    <property name="geometry">
+     <rect>
+      <x>510</x>
+      <y>90</y>
+      <width>41</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Alt</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="ArrowsControlConnectionStringTextbox">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>450</y>
+      <width>131</width>
+      <height>25</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="arrowsControlLabel">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>450</y>
+      <width>131</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Connection String:</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="SetVehicleModeAutoButton">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>400</y>
+      <width>121</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>AUTO</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>718</width>
+     <width>561</width>
      <height>22</height>
     </rect>
    </property>

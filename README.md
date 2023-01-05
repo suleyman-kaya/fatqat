@@ -9,15 +9,15 @@ i consider three diffrent concepts: core+equipments, modular concept, script-bas
 - connecting to a vehicle (✅)
 - vehicle state and settings (✅) 
 - taking off (✅)
-- guiding and controlling copter (✨)
+- guiding and controlling copter (✅)
 - missions (✨)
 
 <br>
 
 2. complete equipments of the software: [⏳]
-- vehicle state (✨)
-- simple goto (✨)
-- guided movement and commands (✨)
+- vehicle state (✅)
+- simple goto (✅)
+- guided movement and commands (✅)
 - basic mission (✨)
 - mission import/export (✨)
 - drone delivery (✨)
