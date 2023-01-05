@@ -4,6 +4,9 @@ fatqat is a lightweight ground control station software for UAVs.
 ## Concepts:
 i consider three diffrent concepts: core+equipments, modular concept, script-based concept.
 
+### core+equipments concept
+![core+equipments screenshot](Images/coreplusequipments.png)
+
 ## To-Do ✅
 1. complete core pieces of the software [⏳]:
 - connecting to a vehicle (✅)
