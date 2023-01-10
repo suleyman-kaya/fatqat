@@ -8,12 +8,12 @@ i consider three diffrent concepts: core+equipments, modular concept, script-bas
 ![core+equipments screenshot](Images/coreplusequipments.png)
 
 ## To-Do ✅
-1. complete core pieces of the software [⏳]:
+1. complete core pieces of the software [✅]:
 - connecting to a vehicle (✅)
 - vehicle state and settings (✅) 
 - taking off (✅)
 - guiding and controlling copter (✅)
-- missions (✨)
+- missions (✅)
 
 <br>
 
