@@ -22,7 +22,7 @@ i consider three diffrent concepts: core+equipments, modular concept, script-bas
 - simple goto (✅)
 - guided movement and commands (✅)
 - basic mission (✨)
-- mission import/export (✨)
+- mission import/export (✅)
 - drone delivery (✨)
 - flight replay (✨)
 - channel overrides (✨)
