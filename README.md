@@ -21,7 +21,7 @@ i consider three diffrent concepts: core+equipments, modular concept, script-bas
 - vehicle state (✅)
 - simple goto (✅)
 - guided movement and commands (✅)
-- basic mission (✨)
+- basic mission (✅)
 - mission import/export (✅)
 - drone delivery (✨)
 - flight replay (✨)
