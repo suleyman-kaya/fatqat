@@ -6,13 +6,14 @@
 #
 # WARNING! All changes made in this file will be lost!
 import socket, time, os
+from pathlib import Path
 from dronekit import *
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 class Ui_FatqatMainWindow(object):
     def setupUi(self, FatqatMainWindow):
         FatqatMainWindow.setObjectName("FatqatMainWindow")
-        FatqatMainWindow.resize(561, 560)
+        FatqatMainWindow.resize(820, 560)
         self.centralwidget = QtWidgets.QWidget(FatqatMainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.ConnectionString_Textbox = QtWidgets.QLineEdit(self.centralwidget)
@@ -161,9 +162,31 @@ class Ui_FatqatMainWindow(object):
         self.SetVehicleModeAutoButton = QtWidgets.QPushButton(self.centralwidget)
         self.SetVehicleModeAutoButton.setGeometry(QtCore.QRect(290, 400, 121, 25))
         self.SetVehicleModeAutoButton.setObjectName("SetVehicleModeAutoButton")
+        self.line_8 = QtWidgets.QFrame(self.centralwidget)
+        self.line_8.setGeometry(QtCore.QRect(540, 10, 31, 491))
+        self.line_8.setFrameShape(QtWidgets.QFrame.VLine)
+        self.line_8.setFrameShadow(QtWidgets.QFrame.Sunken)
+        self.line_8.setObjectName("line_8")
+        self.line_9 = QtWidgets.QFrame(self.centralwidget)
+        self.line_9.setGeometry(QtCore.QRect(550, 60, 261, 16))
+        self.line_9.setFrameShape(QtWidgets.QFrame.HLine)
+        self.line_9.setFrameShadow(QtWidgets.QFrame.Sunken)
+        self.line_9.setObjectName("line_9")
+        self.ImportMissionButton = QtWidgets.QPushButton(self.centralwidget)
+        self.ImportMissionButton.setGeometry(QtCore.QRect(560, 10, 121, 25))
+        self.ImportMissionButton.setObjectName("ImportMissionButton")
+        self.ExportCurrentMission = QtWidgets.QPushButton(self.centralwidget)
+        self.ExportCurrentMission.setGeometry(QtCore.QRect(560, 40, 121, 25))
+        self.ExportCurrentMission.setObjectName("ExportCurrentMission")
+        self.ImportedFileLabel = QtWidgets.QLabel(self.centralwidget)
+        self.ImportedFileLabel.setGeometry(QtCore.QRect(690, 10, 121, 21))
+        self.ImportedFileLabel.setObjectName("ImportedFileLabel")
+        self.ExportedFileLabel = QtWidgets.QLabel(self.centralwidget)
+        self.ExportedFileLabel.setGeometry(QtCore.QRect(690, 40, 121, 21))
+        self.ExportedFileLabel.setObjectName("ExportedFileLabel")
         FatqatMainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(FatqatMainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 561, 22))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 820, 22))
         self.menubar.setObjectName("menubar")
         FatqatMainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(FatqatMainWindow)
@@ -185,14 +208,17 @@ class Ui_FatqatMainWindow(object):
         self.SetVehicleModeLandButton.clicked.connect(self.dkSetVehicleModeLand)
         self.SetVehicleModeAutoButton.clicked.connect(self.dkSetVehicleModeAuto)
         self.ControllingWithKeysButton.clicked.connect(self.dkArrowKeysControl)
+        self.ImportMissionButton.clicked.connect(self.open_file_dialog)
 
     def retranslateUi(self, FatqatMainWindow):
         _translate = QtCore.QCoreApplication.translate
         FatqatMainWindow.setWindowTitle(_translate("FatqatMainWindow", "Fatqat - Ground Control Station Software"))
+        self.ConnectionString_Textbox.setText(_translate("FatqatMainWindow", "tcp:127.0.0.1:5762"))
         self.Btn_Connect.setText(_translate("FatqatMainWindow", "Connect!"))
         self.ConnectionStatusTextLabel.setText(_translate("FatqatMainWindow", "Connection Status:"))
         self.ConnectionStatusLabel.setText(_translate("FatqatMainWindow", "Not Connected"))
         self.VehicleStateLabel.setText(_translate("FatqatMainWindow", "Vehicle State:"))
+        self.Altitude_Textbox.setText(_translate("FatqatMainWindow", "10"))
         self.AltitudeLabel.setText(_translate("FatqatMainWindow", "Altitude:"))
         self.TakeOffButton.setText(_translate("FatqatMainWindow", "Take-off!"))
         self.LocationTextbox1.setText(_translate("FatqatMainWindow", "Latitude"))
@@ -202,10 +228,16 @@ class Ui_FatqatMainWindow(object):
         self.AltitudeStatusLabel.setText(_translate("FatqatMainWindow", "Not reached target alt"))
         self.simpleGotoTextLabel.setText(_translate("FatqatMainWindow", "Status:"))
         self.simpleGotoStatusLabel.setText(_translate("FatqatMainWindow", "Undone"))
+        self.airspeedTextbox.setText(_translate("FatqatMainWindow", "101"))
         self.airspeedLabel.setText(_translate("FatqatMainWindow", "Vehicle Airspeed (m/s):"))
         self.setAirSpeedButton.setText(_translate("FatqatMainWindow", "Set"))
+        self.groundSpeedTextbox.setText(_translate("FatqatMainWindow", "101"))
         self.groundSpeedLabel.setText(_translate("FatqatMainWindow", "Ground speed (m/s):"))
         self.setGroundSpeedButton.setText(_translate("FatqatMainWindow", "Set"))
+        self.durationTextbox.setText(_translate("FatqatMainWindow", "time"))
+        self.xVelocityTextbox.setText(_translate("FatqatMainWindow", "vel X"))
+        self.yVelocityTextbox.setText(_translate("FatqatMainWindow", "vel Y"))
+        self.zVelocityTextbox.setText(_translate("FatqatMainWindow", "vel Z"))
         self.sendNedVelocityButton.setText(_translate("FatqatMainWindow", "send_ned_velocity(x, y, z, duration)"))
         self.SetVehicleModeLabel.setText(_translate("FatqatMainWindow", "Set Vehicle Mode:"))
         self.SetVehicleModeStabilizeButton.setText(_translate("FatqatMainWindow", "STABILIZE"))
@@ -214,9 +246,114 @@ class Ui_FatqatMainWindow(object):
         self.SetVehicleModeLandButton.setText(_translate("FatqatMainWindow", "LAND"))
         self.ControllingWithKeysButton.setText(_translate("FatqatMainWindow", "Control Vehicle With Arrow Keys"))
         self.AltTextbox.setText(_translate("FatqatMainWindow", "Alt"))
+        self.ArrowsControlConnectionStringTextbox.setText(_translate("FatqatMainWindow", "udp:127.0.0.1:14551"))
         self.arrowsControlLabel.setText(_translate("FatqatMainWindow", "Connection String:"))
         self.SetVehicleModeAutoButton.setText(_translate("FatqatMainWindow", "AUTO"))
+        self.ImportMissionButton.setText(_translate("FatqatMainWindow", "Upload a Mission"))
+        self.ExportCurrentMission.setText(_translate("FatqatMainWindow", "Download the Mission"))
+        self.ImportedFileLabel.setText(_translate("FatqatMainWindow", "Imported file:"))
+        self.ExportedFileLabel.setText(_translate("FatqatMainWindow", "Exported file:"))
 
+    def readmission(self, aFileName):
+        """
+        Load a mission from a file into a list. The mission definition is in the Waypoint file
+        format (http://qgroundcontrol.org/mavlink/waypoint_protocol#waypoint_file_format).
+
+        This function is used by upload_mission().
+        """
+        print("\nReading mission from file: %s" % aFileName)
+        cmds = vehicle.commands
+        missionlist=[]
+        with open(aFileName) as f:
+            for i, line in enumerate(f):
+                if i==0:
+                    if not line.startswith('QGC WPL 110'):
+                        raise Exception('File is not supported WP version')
+                else:
+                    linearray=line.split('\t')
+                    ln_index=int(linearray[0])
+                    ln_currentwp=int(linearray[1])
+                    ln_frame=int(linearray[2])
+                    ln_command=int(linearray[3])
+                    ln_param1=float(linearray[4])
+                    ln_param2=float(linearray[5])
+                    ln_param3=float(linearray[6])
+                    ln_param4=float(linearray[7])
+                    ln_param5=float(linearray[8])
+                    ln_param6=float(linearray[9])
+                    ln_param7=float(linearray[10])
+                    ln_autocontinue=int(linearray[11].strip())
+                    cmd = Command( 0, 0, 0, ln_frame, ln_command, ln_currentwp, ln_autocontinue, ln_param1, ln_param2, ln_param3, ln_param4, ln_param5, ln_param6, ln_param7)
+                    missionlist.append(cmd)
+        print("[i] Read selected mission file.")
+        return missionlist
+
+    def upload_mission(self, aFileName):
+        """
+        Upload a mission from a file. 
+        """
+        #Read mission from file
+        missionlist = self.readmission(aFileName)
+        
+        print("\nUpload mission from a file: %s" % aFileName)
+        #Clear existing mission from vehicle
+        print(' Clear mission')
+        cmds = vehicle.commands
+        cmds.clear()
+        #Add new mission to vehicle
+        for command in missionlist:
+            print("[++] Added mission: %s" % command)
+            cmds.add(command)
+        print('[i] Uploaded mission')
+        self.ImportedFileLabel.setText(str(importedMission))
+        vehicle.commands.upload()
+
+    def open_file_dialog(self):
+        global importedMission
+        importedMission = QtWidgets.QFileDialog.getOpenFileName()[0]
+        print(importedMission)
+        self.upload_mission(importedMission)
+
+    def download_mission(self):
+        """
+        Downloads the current mission and returns it in a list.
+        It is used in save_mission() to get the file information to save.
+        """
+        print(" Download mission from vehicle")
+        missionlist=[]
+        cmds = vehicle.commands
+        cmds.download()
+        cmds.wait_ready()
+        for cmd in cmds:
+            missionlist.append(cmd)
+        return missionlist
+
+    def save_mission(self, aFileName):
+        """
+        Save a mission in the Waypoint file format 
+        (http://qgroundcontrol.org/mavlink/waypoint_protocol#waypoint_file_format).
+        """
+        print("\nSave mission from Vehicle to file: %s" % aFileName)    
+        #Download mission from vehicle
+        missionlist = self.download_mission()
+        #Add file-format information
+        output='QGC WPL 110\n'
+        #Add home location as 0th waypoint
+        home = vehicle.home_location
+        output+="%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\n" % (0,1,0,16,0,0,0,0,home.lat,home.lon,home.alt,1)
+        #Add commands
+        for cmd in missionlist:
+            commandline="%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\n" % (cmd.seq,cmd.current,cmd.frame,cmd.command,cmd.param1,cmd.param2,cmd.param3,cmd.param4,cmd.x,cmd.y,cmd.z,cmd.autocontinue)
+            output+=commandline
+        with open(aFileName, 'w') as file_:
+            print(" Write mission to file")
+            print("[i] Wrote mission to file.")
+            file_.write(output)
+
+    def save_file_dialog(self):
+        self.save_mission("exportedMission.txt")
+        self.ExportedFileLabel.setText("exportedMission.txt")
+    
     def dkConnect(self):
         # bu fonksiyon dronekit kullanarak ConnectionString_Textbox.text()'teki text verisiyle ve wait_ready=True parametresiyle drone'a bağlanacak.
         cs = self.ConnectionString_Textbox.text()
