@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>820</width>
+    <width>858</width>
     <height>560</height>
    </rect>
   </property>
@@ -601,7 +601,7 @@
      <rect>
       <x>550</x>
       <y>60</y>
-      <width>261</width>
+      <width>301</width>
       <height>16</height>
      </rect>
     </property>
@@ -614,7 +614,7 @@
      <rect>
       <x>560</x>
       <y>10</y>
-      <width>121</width>
+      <width>141</width>
       <height>25</height>
      </rect>
     </property>
@@ -627,7 +627,7 @@
      <rect>
       <x>560</x>
       <y>40</y>
-      <width>121</width>
+      <width>141</width>
       <height>25</height>
      </rect>
     </property>
@@ -638,9 +638,9 @@
    <widget class="QLabel" name="ImportedFileLabel">
     <property name="geometry">
      <rect>
-      <x>690</x>
+      <x>710</x>
       <y>10</y>
-      <width>121</width>
+      <width>231</width>
       <height>21</height>
      </rect>
     </property>
@@ -651,9 +651,9 @@
    <widget class="QLabel" name="ExportedFileLabel">
     <property name="geometry">
      <rect>
-      <x>690</x>
+      <x>710</x>
       <y>40</y>
-      <width>121</width>
+      <width>231</width>
       <height>21</height>
      </rect>
     </property>
@@ -667,7 +667,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>820</width>
+     <width>858</width>
      <height>22</height>
     </rect>
    </property>
