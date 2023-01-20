@@ -26,3 +26,22 @@ i consider three diffrent concepts: core+equipments, modular concept, script-bas
 - drone delivery (✨)
 - flight replay (✨)
 - channel overrides (✨)
+- missions list (✨)
+- camera view / OpenCV window (✨)
+- multiprocessing (✨)
+
+3. create drone, vtol, plane, and fighter-uav patches [⏳]:
+- drone gcs (✨)
+- vtol gcs (✨)
+- plane gcs (✨)
+- fighter uav gcs (✨)
+
+4. create a simulation branch [⏳]:
+- drone simulation (✨)
+- vtol simulation (✨)
+- plane simulation (✨)
+- fighter uav simulation (✨)
+
+5. optimize whole repository [⏳]:
+- optimize main branch (✨)
+- optimize simulation branch (✨)
