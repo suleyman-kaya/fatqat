@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>858</width>
-    <height>560</height>
+    <width>1424</width>
+    <height>567</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -45,8 +45,8 @@
      <rect>
       <x>10</x>
       <y>90</y>
-      <width>261</width>
-      <height>411</height>
+      <width>471</width>
+      <height>430</height>
      </rect>
     </property>
    </widget>
@@ -94,7 +94,7 @@
      <rect>
       <x>10</x>
       <y>60</y>
-      <width>271</width>
+      <width>475</width>
       <height>16</height>
      </rect>
     </property>
@@ -105,7 +105,7 @@
    <widget class="QLineEdit" name="Altitude_Textbox">
     <property name="geometry">
      <rect>
-      <x>360</x>
+      <x>560</x>
       <y>10</y>
       <width>111</width>
       <height>25</height>
@@ -118,7 +118,7 @@
    <widget class="QLabel" name="AltitudeLabel">
     <property name="geometry">
      <rect>
-      <x>290</x>
+      <x>490</x>
       <y>12</y>
       <width>67</width>
       <height>20</height>
@@ -131,7 +131,7 @@
    <widget class="QPushButton" name="TakeOffButton">
     <property name="geometry">
      <rect>
-      <x>480</x>
+      <x>680</x>
       <y>10</y>
       <width>71</width>
       <height>25</height>
@@ -144,9 +144,9 @@
    <widget class="Line" name="line_3">
     <property name="geometry">
      <rect>
-      <x>280</x>
+      <x>485</x>
       <y>60</y>
-      <width>271</width>
+      <width>270</width>
       <height>16</height>
      </rect>
     </property>
@@ -157,7 +157,7 @@
    <widget class="QLineEdit" name="LocationTextbox1">
     <property name="geometry">
      <rect>
-      <x>290</x>
+      <x>490</x>
       <y>90</y>
       <width>101</width>
       <height>25</height>
@@ -170,7 +170,7 @@
    <widget class="QPushButton" name="GotoThisLocationButton">
     <property name="geometry">
      <rect>
-      <x>290</x>
+      <x>490</x>
       <y>120</y>
       <width>261</width>
       <height>25</height>
@@ -183,7 +183,7 @@
    <widget class="QLineEdit" name="LocationTextbox2">
     <property name="geometry">
      <rect>
-      <x>400</x>
+      <x>600</x>
       <y>90</y>
       <width>101</width>
       <height>25</height>
@@ -196,7 +196,7 @@
    <widget class="Line" name="line_4">
     <property name="geometry">
      <rect>
-      <x>290</x>
+      <x>490</x>
       <y>170</y>
       <width>261</width>
       <height>16</height>
@@ -206,23 +206,10 @@
      <enum>Qt::Horizontal</enum>
     </property>
    </widget>
-   <widget class="Line" name="line_2">
-    <property name="geometry">
-     <rect>
-      <x>263</x>
-      <y>10</y>
-      <width>31</width>
-      <height>491</height>
-     </rect>
-    </property>
-    <property name="orientation">
-     <enum>Qt::Vertical</enum>
-    </property>
-   </widget>
    <widget class="QLabel" name="AltitudeStatusTextLabel">
     <property name="geometry">
      <rect>
-      <x>290</x>
+      <x>490</x>
       <y>40</y>
       <width>111</width>
       <height>17</height>
@@ -235,7 +222,7 @@
    <widget class="QLabel" name="AltitudeStatusLabel">
     <property name="geometry">
      <rect>
-      <x>400</x>
+      <x>600</x>
       <y>40</y>
       <width>151</width>
       <height>17</height>
@@ -248,7 +235,7 @@
    <widget class="QLabel" name="simpleGotoTextLabel">
     <property name="geometry">
      <rect>
-      <x>290</x>
+      <x>490</x>
       <y>150</y>
       <width>111</width>
       <height>17</height>
@@ -261,7 +248,7 @@
    <widget class="QLabel" name="simpleGotoStatusLabel">
     <property name="geometry">
      <rect>
-      <x>340</x>
+      <x>540</x>
       <y>150</y>
       <width>151</width>
       <height>17</height>
@@ -274,7 +261,7 @@
    <widget class="QLineEdit" name="airspeedTextbox">
     <property name="geometry">
      <rect>
-      <x>450</x>
+      <x>650</x>
       <y>190</y>
       <width>51</width>
       <height>25</height>
@@ -287,7 +274,7 @@
    <widget class="QLabel" name="airspeedLabel">
     <property name="geometry">
      <rect>
-      <x>290</x>
+      <x>490</x>
       <y>192</y>
       <width>161</width>
       <height>21</height>
@@ -300,7 +287,7 @@
    <widget class="QPushButton" name="setAirSpeedButton">
     <property name="geometry">
      <rect>
-      <x>510</x>
+      <x>710</x>
       <y>190</y>
       <width>41</width>
       <height>25</height>
@@ -313,7 +300,7 @@
    <widget class="QLineEdit" name="groundSpeedTextbox">
     <property name="geometry">
      <rect>
-      <x>450</x>
+      <x>650</x>
       <y>220</y>
       <width>51</width>
       <height>25</height>
@@ -326,7 +313,7 @@
    <widget class="QLabel" name="groundSpeedLabel">
     <property name="geometry">
      <rect>
-      <x>290</x>
+      <x>490</x>
       <y>222</y>
       <width>161</width>
       <height>21</height>
@@ -339,7 +326,7 @@
    <widget class="QPushButton" name="setGroundSpeedButton">
     <property name="geometry">
      <rect>
-      <x>510</x>
+      <x>710</x>
       <y>220</y>
       <width>41</width>
       <height>25</height>
@@ -352,7 +339,7 @@
    <widget class="Line" name="line_5">
     <property name="geometry">
      <rect>
-      <x>290</x>
+      <x>490</x>
       <y>250</y>
       <width>261</width>
       <height>16</height>
@@ -365,7 +352,7 @@
    <widget class="QLineEdit" name="durationTextbox">
     <property name="geometry">
      <rect>
-      <x>500</x>
+      <x>700</x>
       <y>270</y>
       <width>51</width>
       <height>25</height>
@@ -378,7 +365,7 @@
    <widget class="QLineEdit" name="xVelocityTextbox">
     <property name="geometry">
      <rect>
-      <x>290</x>
+      <x>490</x>
       <y>270</y>
       <width>61</width>
       <height>25</height>
@@ -391,7 +378,7 @@
    <widget class="QLineEdit" name="yVelocityTextbox">
     <property name="geometry">
      <rect>
-      <x>360</x>
+      <x>560</x>
       <y>270</y>
       <width>61</width>
       <height>25</height>
@@ -404,7 +391,7 @@
    <widget class="QLineEdit" name="zVelocityTextbox">
     <property name="geometry">
      <rect>
-      <x>430</x>
+      <x>630</x>
       <y>270</y>
       <width>61</width>
       <height>25</height>
@@ -417,7 +404,7 @@
    <widget class="QPushButton" name="sendNedVelocityButton">
     <property name="geometry">
      <rect>
-      <x>290</x>
+      <x>490</x>
       <y>300</y>
       <width>261</width>
       <height>25</height>
@@ -430,7 +417,7 @@
    <widget class="Line" name="line_6">
     <property name="geometry">
      <rect>
-      <x>290</x>
+      <x>490</x>
       <y>330</y>
       <width>261</width>
       <height>16</height>
@@ -443,7 +430,7 @@
    <widget class="QLabel" name="SetVehicleModeLabel">
     <property name="geometry">
      <rect>
-      <x>290</x>
+      <x>490</x>
       <y>350</y>
       <width>131</width>
       <height>17</height>
@@ -456,7 +443,7 @@
    <widget class="QPushButton" name="SetVehicleModeStabilizeButton">
     <property name="geometry">
      <rect>
-      <x>290</x>
+      <x>490</x>
       <y>370</y>
       <width>89</width>
       <height>25</height>
@@ -469,7 +456,7 @@
    <widget class="QPushButton" name="SetVehicleModeGuidedButton">
     <property name="geometry">
      <rect>
-      <x>390</x>
+      <x>590</x>
       <y>370</y>
       <width>89</width>
       <height>25</height>
@@ -482,7 +469,7 @@
    <widget class="QPushButton" name="SetVehicleModeRTLButton">
     <property name="geometry">
      <rect>
-      <x>490</x>
+      <x>690</x>
       <y>370</y>
       <width>61</width>
       <height>25</height>
@@ -495,7 +482,7 @@
    <widget class="QPushButton" name="SetVehicleModeLandButton">
     <property name="geometry">
      <rect>
-      <x>430</x>
+      <x>630</x>
       <y>400</y>
       <width>121</width>
       <height>25</height>
@@ -508,7 +495,7 @@
    <widget class="Line" name="line_7">
     <property name="geometry">
      <rect>
-      <x>290</x>
+      <x>490</x>
       <y>430</y>
       <width>261</width>
       <height>16</height>
@@ -521,7 +508,7 @@
    <widget class="QPushButton" name="ControllingWithKeysButton">
     <property name="geometry">
      <rect>
-      <x>290</x>
+      <x>490</x>
       <y>480</y>
       <width>261</width>
       <height>25</height>
@@ -534,7 +521,7 @@
    <widget class="QLineEdit" name="AltTextbox">
     <property name="geometry">
      <rect>
-      <x>510</x>
+      <x>710</x>
       <y>90</y>
       <width>41</width>
       <height>25</height>
@@ -547,7 +534,7 @@
    <widget class="QLineEdit" name="ArrowsControlConnectionStringTextbox">
     <property name="geometry">
      <rect>
-      <x>420</x>
+      <x>620</x>
       <y>450</y>
       <width>131</width>
       <height>25</height>
@@ -560,7 +547,7 @@
    <widget class="QLabel" name="arrowsControlLabel">
     <property name="geometry">
      <rect>
-      <x>290</x>
+      <x>490</x>
       <y>450</y>
       <width>131</width>
       <height>20</height>
@@ -573,7 +560,7 @@
    <widget class="QPushButton" name="SetVehicleModeAutoButton">
     <property name="geometry">
      <rect>
-      <x>290</x>
+      <x>490</x>
       <y>400</y>
       <width>121</width>
       <height>25</height>
@@ -583,25 +570,12 @@
      <string>AUTO</string>
     </property>
    </widget>
-   <widget class="Line" name="line_8">
-    <property name="geometry">
-     <rect>
-      <x>540</x>
-      <y>10</y>
-      <width>31</width>
-      <height>491</height>
-     </rect>
-    </property>
-    <property name="orientation">
-     <enum>Qt::Vertical</enum>
-    </property>
-   </widget>
    <widget class="Line" name="line_9">
     <property name="geometry">
      <rect>
-      <x>550</x>
+      <x>754</x>
       <y>60</y>
-      <width>301</width>
+      <width>668</width>
       <height>16</height>
      </rect>
     </property>
@@ -612,7 +586,7 @@
    <widget class="QPushButton" name="ImportMissionButton">
     <property name="geometry">
      <rect>
-      <x>560</x>
+      <x>760</x>
       <y>10</y>
       <width>141</width>
       <height>25</height>
@@ -625,7 +599,7 @@
    <widget class="QPushButton" name="ExportCurrentMission">
     <property name="geometry">
      <rect>
-      <x>560</x>
+      <x>760</x>
       <y>40</y>
       <width>141</width>
       <height>25</height>
@@ -638,9 +612,9 @@
    <widget class="QLabel" name="ImportedFileLabel">
     <property name="geometry">
      <rect>
-      <x>710</x>
+      <x>910</x>
       <y>10</y>
-      <width>231</width>
+      <width>91</width>
       <height>21</height>
      </rect>
     </property>
@@ -651,14 +625,95 @@
    <widget class="QLabel" name="ExportedFileLabel">
     <property name="geometry">
      <rect>
-      <x>710</x>
+      <x>910</x>
       <y>40</y>
-      <width>231</width>
+      <width>91</width>
       <height>21</height>
      </rect>
     </property>
     <property name="text">
      <string>Exported file:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="VideoFeedLabel">
+    <property name="geometry">
+     <rect>
+      <x>770</x>
+      <y>80</y>
+      <width>641</width>
+      <height>421</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../Images/640x480.jpg</pixmap>
+    </property>
+   </widget>
+   <widget class="Line" name="line_10">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>0</y>
+      <width>1410</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="Line" name="line_11">
+    <property name="geometry">
+     <rect>
+      <x>485</x>
+      <y>510</y>
+      <width>935</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="Line" name="line_12">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>8</y>
+      <width>31</width>
+      <height>510</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="Line" name="line_13">
+    <property name="geometry">
+     <rect>
+      <x>740</x>
+      <y>7</y>
+      <width>31</width>
+      <height>510</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="Line" name="line_2">
+    <property name="geometry">
+     <rect>
+      <x>1010</x>
+      <y>7</y>
+      <width>3</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
     </property>
    </widget>
   </widget>
@@ -667,8 +722,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>858</width>
-     <height>22</height>
+     <width>1424</width>
+     <height>20</height>
     </rect>
    </property>
   </widget>
