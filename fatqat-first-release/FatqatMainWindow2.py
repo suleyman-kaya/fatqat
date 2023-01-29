@@ -5,10 +5,28 @@
 # Created by: PyQt5 UI code generator 5.10.1
 #
 # WARNING! All changes made in this file will be lost!
-import socket, time, os
+import socket, time, os, sys
 from pathlib import Path
 from dronekit import *
+import cv2
 from PyQt5 import QtCore, QtGui, QtWidgets
+
+class Worker1(QtCore.QThread):
+    ImageUpdate = QtCore.pyqtSignal(QtGui.QImage)
+    def run(self):
+        self.ThreadActive = True
+        Capture = cv2.VideoCapture(0)
+        while self.ThreadActive:
+            ret, frame = Capture.read()
+            if ret:
+                Image = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+                FlippedImage = cv2.flip(Image, 1)
+                ConvertToQtFormat = QtGui.QImage(FlippedImage.data, FlippedImage.shape[1], FlippedImage.shape[0], QtGui.QImage.Format_RGB888)
+                Pic = ConvertToQtFormat.scaled(640, 480, QtCore.Qt.KeepAspectRatio)
+                self.ImageUpdate.emit(Pic)
+    def stop(self):
+        self.ThreadActive = False
+        self.quit()
 
 class Ui_FatqatMainWindow(object):
     def setupUi(self, FatqatMainWindow):
@@ -213,6 +231,10 @@ class Ui_FatqatMainWindow(object):
         self.statusbar.setObjectName("statusbar")
         FatqatMainWindow.setStatusBar(self.statusbar)
 
+        self.Worker1 = Worker1()
+        self.Worker1.start()
+        self.Worker1.ImageUpdate.connect(self.ImageUpdateSlot)
+
         self.retranslateUi(FatqatMainWindow)
         QtCore.QMetaObject.connectSlotsByName(FatqatMainWindow)
 
@@ -275,6 +297,12 @@ class Ui_FatqatMainWindow(object):
         self.ImportedFileLabel.setText(_translate("FatqatMainWindow", "Imported file:"))
         self.ExportedFileLabel.setText(_translate("FatqatMainWindow", "Exported file:"))
 
+    def ImageUpdateSlot(self, Image):
+        self.VideoFeedLabel.setPixmap(QtGui.QPixmap.fromImage(Image))
+
+    def CancelFeed(self):
+        self.Worker1.stop()
+    
     def readmission(self, aFileName):
         """
         Load a mission from a file into a list. The mission definition is in the Waypoint file
