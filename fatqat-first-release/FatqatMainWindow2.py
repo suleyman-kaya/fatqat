@@ -8,7 +8,7 @@
 import socket, time, os, sys
 from pathlib import Path
 from dronekit import *
-import cv2
+import cv2, numpy as np
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 class Worker1(QtCore.QThread):
@@ -20,6 +20,26 @@ class Worker1(QtCore.QThread):
             ret, frame = Capture.read()
             if ret:
                 Image = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+                
+                # A basic mission: Circle Detection
+                # Convert it to gray
+                gray = cv2.cvtColor(Image, cv2.COLOR_BGR2GRAY)
+                # Reduce the noise to avoid false circle detection
+                gray = cv2.medianBlur(gray, 5)
+                # Apply Hough Circle Transform
+                rows = gray.shape[0]
+                circles = cv2.HoughCircles(gray, cv2.HOUGH_GRADIENT, 1, rows / 8, param1=100, param2=30, minRadius=1, maxRadius=30)
+                # Draw circles
+                if circles is not None:
+                    circles = np.uint16(np.around(circles))
+                    for i in circles[0, :]:
+                        center = (i[0], i[1])
+                        # circle center
+                        cv2.circle(Image, center, 1, (0, 100, 100), 3)
+                        # circle outline
+                        radius = i[2]
+                        cv2.circle(Image, center, radius, (255, 0, 255), 3)
+
                 FlippedImage = cv2.flip(Image, 1)
                 ConvertToQtFormat = QtGui.QImage(FlippedImage.data, FlippedImage.shape[1], FlippedImage.shape[0], QtGui.QImage.Format_RGB888)
                 Pic = ConvertToQtFormat.scaled(640, 480, QtCore.Qt.KeepAspectRatio)
