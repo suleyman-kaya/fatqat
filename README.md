@@ -28,7 +28,7 @@ i consider three diffrent concepts: core+equipments, modular concept, script-bas
 - channel overrides (✨)
 - missions list (✨)
 - camera view / OpenCV window ✅)
-- multiprocessing (✨)
+- multiprocessing (✨-kinda done ^_^)
 
 3. create drone, vtol, plane, and fighter-uav patches [⏳]:
 - drone gcs (✨)

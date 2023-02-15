@@ -60,9 +60,6 @@ class Ui_FatqatMainWindow(object):
         self.Btn_Connect = QtWidgets.QPushButton(self.centralwidget)
         self.Btn_Connect.setGeometry(QtCore.QRect(180, 10, 89, 25))
         self.Btn_Connect.setObjectName("Btn_Connect")
-        self.VehicleStateTextbox = QtWidgets.QPlainTextEdit(self.centralwidget)
-        self.VehicleStateTextbox.setGeometry(QtCore.QRect(10, 90, 471, 430))
-        self.VehicleStateTextbox.setObjectName("VehicleStateTextbox")
         self.ConnectionStatusTextLabel = QtWidgets.QLabel(self.centralwidget)
         self.ConnectionStatusTextLabel.setGeometry(QtCore.QRect(10, 40, 131, 17))
         self.ConnectionStatusTextLabel.setObjectName("ConnectionStatusTextLabel")
@@ -242,9 +239,12 @@ class Ui_FatqatMainWindow(object):
         self.line_2.setFrameShape(QtWidgets.QFrame.VLine)
         self.line_2.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.line_2.setObjectName("line_2")
+        self.VehicleStateTextbox = QtWidgets.QTextBrowser(self.centralwidget)
+        self.VehicleStateTextbox.setGeometry(QtCore.QRect(10, 90, 471, 431))
+        self.VehicleStateTextbox.setObjectName("VehicleStateTextbox")
         FatqatMainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(FatqatMainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 1424, 20))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 1424, 18))
         self.menubar.setObjectName("menubar")
         FatqatMainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(FatqatMainWindow)
@@ -254,6 +254,12 @@ class Ui_FatqatMainWindow(object):
         self.Worker1 = Worker1()
         self.Worker1.start()
         self.Worker1.ImageUpdate.connect(self.ImageUpdateSlot)
+
+        self.VehicleStateUpdater = QtCore.QTimer()
+        # ?
+        # self.VehicleStateLabel.moveToThread(self)
+        self.VehicleStateUpdater.timeout.connect(self.dkGetVehicleState)
+        self.VehicleStateUpdater.start(1000) # milliseconds
 
         self.retranslateUi(FatqatMainWindow)
         QtCore.QMetaObject.connectSlotsByName(FatqatMainWindow)
@@ -475,8 +481,9 @@ class Ui_FatqatMainWindow(object):
         y= "Armed: %s" % vehicle.armed
         global vehicleState
         vehicleState = a+"\n"+b+"\n"+c+"\n"+d+"\n"+e+"\n"+f+"\n"+g+"\n"+h+"\n"+i+"\n"+j+"\n"+k+"\n"+l+"\n"+m+"\n"+n+"\n"+o+"\n"+p+"\n"+r+"\n"+s+"\n"+t+"\n"+u+"\n"+v+"\n"+y
-        self.VehicleStateTextbox.setPlainText(vehicleState)
-        print(vehicleState)
+        self.VehicleStateTextbox.clear()
+        self.VehicleStateTextbox.append(vehicleState)
+        # print(vehicleState)
     
     def arm_and_takeoff(self, aTargetAltitude):
         """
