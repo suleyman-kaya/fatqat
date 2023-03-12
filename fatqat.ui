@@ -1,0 +1,729 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>966</width>
+    <height>648</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Fatqat Ground Control Station</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="Connection_pushButton">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>40</y>
+      <width>121</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Connect to Vehicle</string>
+    </property>
+   </widget>
+   <widget class="QPlainTextEdit" name="ConnectionString_textBox">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>40</y>
+      <width>160</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="inputMethodHints">
+     <set>Qt::ImhNone</set>
+    </property>
+    <property name="plainText">
+     <string>Connection string here</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="SimpleCommands_label">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>110</y>
+      <width>110</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Simple Commands</string>
+    </property>
+   </widget>
+   <widget class="Line" name="line">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>120</y>
+      <width>70</width>
+      <height>3</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="Line" name="line_2">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>120</y>
+      <width>70</width>
+      <height>3</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="TextConnectionStatus_label">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>80</y>
+      <width>110</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Connection Status:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="ConnectionStatus_label">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>80</y>
+      <width>160</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Not Connected</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Takeoff_pushButton">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>140</y>
+      <width>121</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Takeoff (meters)</string>
+    </property>
+   </widget>
+   <widget class="QPlainTextEdit" name="TakeoffAltitude_textBox">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>140</y>
+      <width>160</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="inputMethodHints">
+     <set>Qt::ImhNone</set>
+    </property>
+    <property name="plainText">
+     <string>Altitude (meters)</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="TextTakeoffStatus_label">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>180</y>
+      <width>110</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Takeoff Status:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="TakeoffStatus_label">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>180</y>
+      <width>160</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Not Reached</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="SetAirSpeed_pushButton">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>220</y>
+      <width>121</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Set Airspeed (m/s)</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Airspeed_label">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>260</y>
+      <width>160</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>NaN</string>
+    </property>
+   </widget>
+   <widget class="QPlainTextEdit" name="Airspeed_textBox">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>220</y>
+      <width>160</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="inputMethodHints">
+     <set>Qt::ImhNone</set>
+    </property>
+    <property name="plainText">
+     <string>Airspeed (m/s)</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="TextAirspeed_label">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>260</y>
+      <width>110</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Current Airspeed:</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="SetGroundspeed_pushButton">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>300</y>
+      <width>121</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Set Groundspeed</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Groundspeed_label">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>340</y>
+      <width>160</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>NaN</string>
+    </property>
+   </widget>
+   <widget class="QPlainTextEdit" name="Groundspeed_textBox">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>300</y>
+      <width>160</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="inputMethodHints">
+     <set>Qt::ImhNone</set>
+    </property>
+    <property name="plainText">
+     <string>Groundspeed (m/s)</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="TextCurrentGroundspeed_label">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>340</y>
+      <width>110</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Crr. Groundspeed:</string>
+    </property>
+   </widget>
+   <widget class="QPlainTextEdit" name="Velocity_X_textBox">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>380</y>
+      <width>90</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="inputMethodHints">
+     <set>Qt::ImhNone</set>
+    </property>
+    <property name="plainText">
+     <string>Coordinate(X)</string>
+    </property>
+   </widget>
+   <widget class="QPlainTextEdit" name="Velocity_Y_textBox">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>380</y>
+      <width>90</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="inputMethodHints">
+     <set>Qt::ImhNone</set>
+    </property>
+    <property name="plainText">
+     <string>Coordinate(Y)</string>
+    </property>
+   </widget>
+   <widget class="QPlainTextEdit" name="Velocity_Z_textBox">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>380</y>
+      <width>90</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="inputMethodHints">
+     <set>Qt::ImhNone</set>
+    </property>
+    <property name="plainText">
+     <string>Coordinate(Z)</string>
+    </property>
+   </widget>
+   <widget class="QPlainTextEdit" name="Velocity_Duration_textBox">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>420</y>
+      <width>121</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="inputMethodHints">
+     <set>Qt::ImhNone</set>
+    </property>
+    <property name="plainText">
+     <string>Duration (seconds)</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Send_Ned_Velocity_pushButton">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>420</y>
+      <width>160</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>send_ned_velocity(x,y,z,d)</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="TextIsVelocitySent_label">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>460</y>
+      <width>110</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Is Velocity sent?:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="IsVelocitySent_label">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>460</y>
+      <width>160</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>True/False</string>
+    </property>
+   </widget>
+   <widget class="QPlainTextEdit" name="GlobalRelative_Y_textBox">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>500</y>
+      <width>90</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="inputMethodHints">
+     <set>Qt::ImhNone</set>
+    </property>
+    <property name="plainText">
+     <string>Coordinate(Y)</string>
+    </property>
+   </widget>
+   <widget class="QPlainTextEdit" name="GlobalRelative_X_textBox">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>500</y>
+      <width>90</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="inputMethodHints">
+     <set>Qt::ImhNone</set>
+    </property>
+    <property name="plainText">
+     <string>Coordinate(X)</string>
+    </property>
+   </widget>
+   <widget class="QPlainTextEdit" name="GlobalRelative_Altitude_textBox">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>500</y>
+      <width>90</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="inputMethodHints">
+     <set>Qt::ImhNone</set>
+    </property>
+    <property name="plainText">
+     <string>Altitude (m)</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="SimpleGoto_pushButton">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>540</y>
+      <width>291</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>SimpleGoto(X, Y, Z, meters)</string>
+    </property>
+   </widget>
+   <widget class="Line" name="line_4">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>210</y>
+      <width>290</width>
+      <height>3</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="Line" name="line_5">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>290</y>
+      <width>290</width>
+      <height>3</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="Line" name="line_6">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>370</y>
+      <width>290</width>
+      <height>3</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="Line" name="line_7">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>490</y>
+      <width>290</width>
+      <height>3</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBox">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>331</width>
+      <height>581</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Connection and Simple Events</string>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="AutopilotMissions_groupBox">
+    <property name="geometry">
+     <rect>
+      <x>350</x>
+      <y>10</y>
+      <width>371</width>
+      <height>581</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Autopilot Missions</string>
+    </property>
+    <widget class="QListView" name="Missions_listView">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>200</y>
+       <width>350</width>
+       <height>370</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="TextExportedTo_label">
+     <property name="geometry">
+      <rect>
+       <x>190</x>
+       <y>70</y>
+       <width>70</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Exported to:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="Exported_Mission_Filepath_label">
+     <property name="geometry">
+      <rect>
+       <x>270</x>
+       <y>70</y>
+       <width>90</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>/suleyman/desk</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="TextImportedFrom_label">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>70</y>
+       <width>60</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Imported:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="Imported_Mission_Filepath_label">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>70</y>
+       <width>100</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>/suleyman/fatqat</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="Line" name="line_3">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>190</y>
+      <width>100</width>
+      <height>3</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="Line" name="line_8">
+    <property name="geometry">
+     <rect>
+      <x>610</x>
+      <y>190</y>
+      <width>100</width>
+      <height>3</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="MissionsListView_label">
+    <property name="geometry">
+     <rect>
+      <x>480</x>
+      <y>180</y>
+      <width>110</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Missions List View</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Import_a_Mission_pushButton">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>40</y>
+      <width>160</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Import a Mission</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Export_Current_Mission_pushButton">
+    <property name="geometry">
+     <rect>
+      <x>540</x>
+      <y>40</y>
+      <width>170</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Export Current Mission</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Clear_Current_Mission_pushButton">
+    <property name="geometry">
+     <rect>
+      <x>540</x>
+      <y>130</y>
+      <width>170</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Clear Current Mission</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="List_All_Missions_pushButton">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>130</y>
+      <width>160</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>List All Missions</string>
+    </property>
+   </widget>
+   <zorder>AutopilotMissions_groupBox</zorder>
+   <zorder>groupBox</zorder>
+   <zorder>Connection_pushButton</zorder>
+   <zorder>ConnectionString_textBox</zorder>
+   <zorder>SimpleCommands_label</zorder>
+   <zorder>line</zorder>
+   <zorder>line_2</zorder>
+   <zorder>TextConnectionStatus_label</zorder>
+   <zorder>ConnectionStatus_label</zorder>
+   <zorder>Takeoff_pushButton</zorder>
+   <zorder>TakeoffAltitude_textBox</zorder>
+   <zorder>TextTakeoffStatus_label</zorder>
+   <zorder>TakeoffStatus_label</zorder>
+   <zorder>SetAirSpeed_pushButton</zorder>
+   <zorder>Airspeed_label</zorder>
+   <zorder>Airspeed_textBox</zorder>
+   <zorder>TextAirspeed_label</zorder>
+   <zorder>SetGroundspeed_pushButton</zorder>
+   <zorder>Groundspeed_label</zorder>
+   <zorder>Groundspeed_textBox</zorder>
+   <zorder>TextCurrentGroundspeed_label</zorder>
+   <zorder>Velocity_X_textBox</zorder>
+   <zorder>Velocity_Y_textBox</zorder>
+   <zorder>Velocity_Z_textBox</zorder>
+   <zorder>Velocity_Duration_textBox</zorder>
+   <zorder>Send_Ned_Velocity_pushButton</zorder>
+   <zorder>TextIsVelocitySent_label</zorder>
+   <zorder>IsVelocitySent_label</zorder>
+   <zorder>GlobalRelative_Y_textBox</zorder>
+   <zorder>GlobalRelative_X_textBox</zorder>
+   <zorder>GlobalRelative_Altitude_textBox</zorder>
+   <zorder>SimpleGoto_pushButton</zorder>
+   <zorder>line_4</zorder>
+   <zorder>line_5</zorder>
+   <zorder>line_6</zorder>
+   <zorder>line_7</zorder>
+   <zorder>line_3</zorder>
+   <zorder>line_8</zorder>
+   <zorder>MissionsListView_label</zorder>
+   <zorder>Import_a_Mission_pushButton</zorder>
+   <zorder>Export_Current_Mission_pushButton</zorder>
+   <zorder>Clear_Current_Mission_pushButton</zorder>
+   <zorder>List_All_Missions_pushButton</zorder>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>966</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
