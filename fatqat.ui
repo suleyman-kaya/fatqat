@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>966</width>
-    <height>648</height>
+    <width>1404</width>
+    <height>959</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -668,6 +668,90 @@
      <string>List All Missions</string>
     </property>
    </widget>
+   <widget class="QGroupBox" name="IR_Thermal_Camera_Video_Feed_groupBox">
+    <property name="geometry">
+     <rect>
+      <x>730</x>
+      <y>10</y>
+      <width>661</width>
+      <height>441</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Infrared Thermal Camera Video Feed</string>
+    </property>
+    <widget class="QLabel" name="ThermalCameraVideoFeed_label">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>641</width>
+       <height>411</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>thermalPic.jpeg</pixmap>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="RGB_Camera_Video_Feed_groupBox">
+    <property name="geometry">
+     <rect>
+      <x>730</x>
+      <y>460</y>
+      <width>661</width>
+      <height>441</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>RGB Camera Video Feed</string>
+    </property>
+    <widget class="QLabel" name="RGB_CameraVideoFeed_label">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>641</width>
+       <height>411</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>Vay.jpg</pixmap>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="Thermal_Camera_ImgProc_groupBox">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>600</y>
+      <width>711</width>
+      <height>141</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Thermal Camera ImgProc App Settings</string>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="RGB_Camera_ImgProc_groupBox">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>760</y>
+      <width>711</width>
+      <height>141</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>RGB Camera ImgProc App Settings</string>
+    </property>
+   </widget>
    <zorder>AutopilotMissions_groupBox</zorder>
    <zorder>groupBox</zorder>
    <zorder>Connection_pushButton</zorder>
@@ -711,13 +795,17 @@
    <zorder>Export_Current_Mission_pushButton</zorder>
    <zorder>Clear_Current_Mission_pushButton</zorder>
    <zorder>List_All_Missions_pushButton</zorder>
+   <zorder>IR_Thermal_Camera_Video_Feed_groupBox</zorder>
+   <zorder>RGB_Camera_Video_Feed_groupBox</zorder>
+   <zorder>Thermal_Camera_ImgProc_groupBox</zorder>
+   <zorder>RGB_Camera_ImgProc_groupBox</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>966</width>
+     <width>1404</width>
      <height>26</height>
     </rect>
    </property>
