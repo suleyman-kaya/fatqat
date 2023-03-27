@@ -1,4 +1,0 @@
-opencv-contrib-python
-termcolor
-mavproxy
-PyQt5
