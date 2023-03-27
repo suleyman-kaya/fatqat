@@ -1,0 +1,6 @@
+numpy
+pymavlink>=2.4.14
+pyserial>=3.0
+
+[server]
+flask
