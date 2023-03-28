@@ -8,7 +8,6 @@ Tested on: Ubuntu 20.04 [✔️]
 Ground control station only:
 `python3 fatqat.py --mode gcs --connect <CONNECTION_STRING>`
 
-<br>
 
 Image processing applications:
 `python3 fatqat.py --mode imgproc --cam_src <CAMERA_SOURCE> --ir_cam_src <IR_CAMERA_SOURCE> --app <IMG_PROC_APP_PATH>`
