@@ -15,7 +15,7 @@ if args.mode == "gcs":
         parser.error("gcs mode requires --connect argument.")
 
     print(colored("[i] Ground Control Station only", 'green'))
-    os.system(f"python3 modules/gcs/connection.py --connect {args.connect} &")
+    os.system(f"sudo python3 modules/gcs/connection.py --connect {args.connect} &")
     time.sleep(6)
     os.system("python3 modules/gcs/gcs.py &")
 
