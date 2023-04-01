@@ -5,7 +5,7 @@ import numpy as np
 # Set video source
 parser = argparse.ArgumentParser()
 parser.add_argument("--cam_src", help="Set video feed source", required=True)
-parser.add_argument("--ir_cam_src", help="IR camera video feed source")
+parser.add_argument("--ir_cam_src", help="Set IR video feed source", required=True)
 args = parser.parse_args()
 ir_src = int(args.ir_cam_src)
 src = int(args.cam_src)
