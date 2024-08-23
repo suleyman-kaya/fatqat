@@ -8,7 +8,7 @@ To set up **Fatqat/YILDIZ OS**, follow these streamlined steps:
 
 1. [Obtain the **Fatqat/YILDIZ OS** ISO file.](https://drive.google.com/file/d/1HhcKLlA97O4HqoEbWRxtf0D6NDskypto/view?usp=sharing)
 2. Perform a standard Ubuntu installation using the ISO.
-3. Once installed, launch a simulation with the `sim-start` command or connect your vehicle using MAVProxy.
+3. Once installed, launch a simulation with the `sim-baslat` command or connect your vehicle using `mavproxy.py --master=<Your Connection String>`.
 
 ## 🚀 Usage:
 
